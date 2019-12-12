@@ -5,7 +5,7 @@ CREATE TABLE domains (
   last_check            INT DEFAULT NULL,
   type                  VARCHAR(6) NOT NULL,
   notified_serial       INT DEFAULT NULL,
-  account               VARCHAR(40) CHARACTER SET 'utf8' DEFAULT NULL,
+  account               VARCHAR(40) CHARACTER SET 'utf8mb4' DEFAULT NULL,
   PRIMARY KEY (id)
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
@@ -35,7 +35,7 @@ CREATE INDEX ordername ON records (ordername);
 CREATE TABLE supermasters (
   ip                    VARCHAR(64) NOT NULL,
   nameserver            VARCHAR(255) NOT NULL,
-  account               VARCHAR(40) CHARACTER SET 'utf8' NOT NULL,
+  account               VARCHAR(40) CHARACTER SET 'utf8mb4' NOT NULL,
   PRIMARY KEY (ip, nameserver)
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
@@ -46,8 +46,8 @@ CREATE TABLE comments (
   name                  VARCHAR(255) NOT NULL,
   type                  VARCHAR(10) NOT NULL,
   modified_at           INT NOT NULL,
-  account               VARCHAR(40) CHARACTER SET 'utf8' DEFAULT NULL,
-  comment               TEXT CHARACTER SET 'utf8' NOT NULL,
+  account               VARCHAR(40) CHARACTER SET 'utf8mb4' DEFAULT NULL,
+  comment               TEXT CHARACTER SET 'utf8mb4' NOT NULL,
   PRIMARY KEY (id)
 ) Engine=InnoDB CHARACTER SET 'latin1';
 
